@@ -143,7 +143,7 @@ def run_script():
 def my_task():
     send_error_email("subjuct", "no content")
 
-schedule.every().minute.do(my_task())
+schedule.every().minute.do(my_task)
 
 # Run the schedule in a loop
 while True:
