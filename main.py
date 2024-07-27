@@ -105,7 +105,7 @@ def run_script():
                     send_error_email("Tradovate Crawler", "Closed all positions", email_to=account["email"])
                 except NoSuchElementException:
                     modal_body_text = dialog_div.find_element(By.CSS_SELECTOR, ".modal-body").text
-                    send_error_email("Tradovate Crawler", "All Positions were closed", email_to=account["email"])
+                    send_error_email("Tradovate Crawler", "All Positions were closed")
                     dialog_div.find_element(By.CSS_SELECTOR, ".btn-primary").click()
                     if "No working orders" not in modal_body_text:
                         send_error_email("Tradovate Crawler Script Error",
@@ -137,7 +137,7 @@ def run_script():
 
 
 # Schedule the daily task at 10:30 AM every day
-schedule.every().day.at("17:07").do(run_script)
+schedule.every().day.at("17:09").do(run_script)
 
 # Run the schedule in a loop
 while True:
