@@ -105,7 +105,7 @@ def run_script():
                     send_error_email("Tradovate Crawler", "Closed all positions", email_to=account["email"])
                 except NoSuchElementException:
                     modal_body_text = dialog_div.find_element(By.CSS_SELECTOR, ".modal-body").text
-                    print(modal_body_text)
+                    send_error_email("Tradovate Crawler", "All Positions were closed", email_to=account["email"])
                     dialog_div.find_element(By.CSS_SELECTOR, ".btn-primary").click()
                     if "No working orders" not in modal_body_text:
                         send_error_email("Tradovate Crawler Script Error",
