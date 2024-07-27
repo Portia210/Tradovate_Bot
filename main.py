@@ -142,9 +142,11 @@ def send_error_email(subject, message, email_to=EMAIL_TO):
 def my_task():
     send_error_email("Program Running", "program running")
 
-schedule.every().minute.do(my_task)
+my_task()
 
-# Run the schedule in a loop
-while True:
-    schedule.run_pending()
-    time.sleep(1)
+# schedule.every().minute.do(my_task)
+#
+# # Run the schedule in a loop
+# while True:
+#     schedule.run_pending()
+#     time.sleep(1)
