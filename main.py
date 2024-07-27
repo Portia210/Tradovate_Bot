@@ -137,7 +137,7 @@ def run_script():
 
 
 # Schedule the daily task at 10:30 AM every day
-schedule.every().day.at("01:53").do(run_script)
+schedule.every().day.at("17:07").do(run_script)
 
 # Run the schedule in a loop
 while True:
