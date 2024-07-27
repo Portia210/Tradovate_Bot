@@ -140,11 +140,12 @@ def run_script():
 # schedule.every().day.at("17:09").do(run_script)
 
 
+#
+# schedule.every().minute.do(run_script)
+#
+# # Run the schedule in a loop
+# while True:
+#     schedule.run_pending()
+#     time.sleep(1)
 
-schedule.every().minute.do(run_script)
-
-# Run the schedule in a loop
-while True:
-    schedule.run_pending()
-    time.sleep(1)
-
+# run_script()
