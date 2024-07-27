@@ -139,10 +139,14 @@ def run_script():
 # Schedule the daily task at 10:30 AM every day
 # schedule.every().day.at("17:09").do(run_script)
 
-# # Run the schedule in a loop
-# while True:
-#     schedule.run_pending()
-#     time.sleep(1)
 
+def my_task():
+    send_error_email("subjuct", "no content")
 
-send_error_email("test new email service", "no message")
+schedule.every().minute.do(my_task())
+
+# Run the schedule in a loop
+while True:
+    schedule.run_pending()
+    time.sleep(1)
+
